@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // POO en JS
+        // 1 - Déclaration d'objet JS en méthode inline.
+        var Multiply = {
+            x: 2,
+            y: 12,
+            calcul: function () {
+                return this.x * this.y
+            }
+        }
+
+        // document.write("Somme = " + Multiply.calcul());
+
+        // 2 - Création d'objet JS par constructeur.
+        // let Voiture = function () {
+        //     this.possedeMoteur = true;
+        //     this.avancer = function () {
+        //         document.write("avance");
+        //     }
+        // }
+
+        // let simca1100 = new Voiture();
+        // if (simca1100.possedeMoteur) {
+        //     document.write("La voiture simca1100 possède bien un moteur <br />");
+        // } else {
+        //     document.write("La voiture simca1100 ne possède pas de moteur <br />");
+        // }
+        // document.write("La voiture simca1100 ");
+        // simca1100.avancer();
+
+        // 3 - Variables privées dans une instance d'objet
+        let Voiture = function(){
+            let nbRoues = 4;
+            this.avancer = function(){
+                document.write("avance");
+            }
+        }
+
+        let simca1100 = new Voiture();
+        document.write("La voiture simca1100 ");
+        simca1100.avancer();
+        document.write("<br/>");
+        document.write("La voiture simca1100 a " + simca1100.nbRoues + " roues");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
