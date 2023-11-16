@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objets</title>
+
+    <script>
+        // POO en JS
+        // 1 - DECLARATION D'OBJETS JS EN MODE "IN-LINE"
+        /*
+        var Multiply = {
+            x: 2,
+            y: 12,
+            calcul: function () {
+                return this.x * this.y
+            }
+        }
+
+        document.write("Somme = " + Multiply.calcul());
+        */
+
+        // 2 - CREATION DES OBJETS JS PAR CONSTRUCTEUR
+        /*
+        let Voiture = function () {
+            this.possedeMoteur = true;
+            this.avancer = function () {
+                document.write("avance");
+            }
+        }
+
+        let simca1100 = new Voiture();
+        if (simca1100.possedeMoteur) {
+            document.write("La voiture simca1100 possède bien un moteur <br />");
+        } else {
+            document.write("La voiture simca1100 ne possède pas de moteur <br />");
+        }
+        document.write("La voiture simca1100 ");
+        simca1100.avancer();
+        */
+
+        // 3 - VARIABLES PRIVEES DANS UNE INSTANCE D'OBJETS
+        /*
+        let Voiture = function(){
+            let nbRoues = 4;
+            this.avancer = function(){
+                document.write("avance");
+            }
+        }
+
+        let simca1100 = new Voiture();
+        document.write("La voiture simca1100 ");
+        simca1100.avancer();
+        document.write("<br/>");
+        document.write("La voiture simca1100 a " + simca1100.nbRoues + " roues");
+        */
+
+        // 4 - PASSAGE DE PARAMETRES A UN CONSTRUCTEUR
+        /*
+        let Fruit = function(couleur){
+            this.couleur = couleur;
+        }
+
+        let fruitDuJour = new Fruit("orange");
+        document.write("Mon fruit du jour est de couleur ");
+        document.write(fruitDuJour.couleur);
+        */
+
+        // 5 - NON PARTAGE DES METHODES PAR LES INSTANCES D'OBJETS
+        /*
+        let Fruit = function () {
+            this.possedeVitamines = true;
+            this.nourrir = function () {
+                document.write("Ce fruit est très bon pour l'apport en fibres facilitant la digestion etc");
+            }
+            this.tuer = function () {
+                document.write("Ce fruit n'est pas comestible");
+            }
+        }
+
+        let pasteque = new Fruit();
+        let coco = new Fruit();
+
+        if (pasteque.nourrir == coco.nourrir) {
+            document.write("La méthode est partagée par les objets pasteque et coco");
+        } else {
+            document.write("La méthode est non partagée par les objets pasteque et coco");
+        }
+        */
+
+        // 6 - NOTION DE PROTOTYPE
+        /* 
+        let Voiture = function () {};
+        document.write("Prototype du constructeur : " + Voiture.prototype + "<br />");
+
+        Voiture.prototype.zigzaguer = function() {
+            document.write("zigzague dangereusement<br />");
+        }
+
+        let simca1100 = new Voiture();
+        document.write("Que fait la simca1100 ?<br />Elle ");
+        simca1100.zigzaguer();
+
+        let renault5 = new Voiture();
+        if (simca1100.zigzaguer === renault5.zigzaguer){
+            document.write("La méthode zigzaguer est partagée entre les objets simca1100 et renault5");
+        } else {
+            document.write("La méthode zigzaguer n'est pas partagée entre les 2 objets");
+        }
+        */
+
+        // 7 - SURCHARGE D'UNE METHODE
+        /*
+        let Voiture = function(){};
+        Voiture.prototype.piler = function(){
+            document.write("pile<br />");
+        }
+
+        let simca1100 = new Voiture();
+        document.write("La simca1100 ");
+        simca1100.piler();
+
+        let renault5 = new Voiture();
+
+        simca1100.piler = function(){
+            document.write("pile brutalement<br />");
+        }
+
+        document.write("La simca1100 ");
+        simca1100.piler();
+
+        document.write("La renault5 ");
+        renault5.piler();
+
+        if(simca1100.piler === renault5.piler){
+            document.write("La modification (surcharge) de la méthode piler a impacté les 2 objets");
+        } else {
+            document.write("Seul l'objet dont la méthode piler a été surchargée est modifié");
+        }
+        */
+
+        // 8 - EXTENSION D'UN PROTOTYPE
+        /* 
+        let Voiture = function(){};
+
+        Voiture.prototype.accelerer = function(){
+            document.write("accélère<br />");
+        }
+
+        let simca1100 = new Voiture();
+        document.write("La simca1100 ");
+        simca1100.accelerer();
+
+        Voiture.prototype.ralentir = function(){
+            document.write("ralentit<br />");
+        }
+
+        document.write("La simca1100 ");
+        simca1100.ralentir();
+        */
+
+        // 9 - MECANISME DE L'HERITAGE
+        /*
+        let Vehicule = function () {};
+
+        Vehicule.prototype.accelerer = function () {
+            document.write("accélère<br />");
+        }
+        Vehicule.prototype.ralentir = function () {
+            document.write("ralentit<br />");
+        }
+
+        let Voiture = function () {};
+
+        for (key in Vehicule.prototype) {
+            Voiture.prototype[key] = Vehicule.prototype[key];
+        }
+
+        Voiture.prototype.freiner = function () {
+            document.write("freine<br />");
+        }
+
+        let simca1100 = new Voiture();
+        document.write("La simca1100 ");
+        simca1100.accelerer();
+
+        document.write("La simca1100 ");
+        simca1100.freiner();
+        */
+
+        // 10 - LIMITE DE L'HERITAGE DU 9 CI-DESSUS
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
